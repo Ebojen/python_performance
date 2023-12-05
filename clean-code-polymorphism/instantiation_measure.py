@@ -1,17 +1,23 @@
 from timeit import timeit
 from typing import Callable
 
-from shapes import (
-    NaiveSquare,
-    NaiveRectangle,
-    NaiveTriangle,
-    NaiveCircle,
-    NoCalcSquare,
-    NoCalcRectangle,
-    NoCalcTriangle,
-    NoCalcCircle
+from control.shapes import (
+    ControlSquare,
+    ControlRectangle,
+    ControlTriangle,
+    ControlCircle,
 )
-from utilities import get_random_float
+from with_getters.shapes import (
+    GetterSquare,
+    GetterRectangle,
+    GetterTriangle,
+    GetterCircle,
+    PropertiesSquare,
+    PropertiesRectangle,
+    PropertiesTriangle,
+    PropertiesCircle
+)
+from utilities import COLUMN_WIDTH, DIVIDER, HEADER, get_random_float
 
 def time_instantiation(num_instances: int, constructor: Callable, num_args: int):
     return timeit(
@@ -20,26 +26,72 @@ def time_instantiation(num_instances: int, constructor: Callable, num_args: int)
     ) / num_instances
 
 if __name__ == '__main__':
-    naive_square_times = time_instantiation(1_000_000, NaiveSquare, 1)
-    print(f'Avg Naive square times in seconds were {naive_square_times:.10f}')
+    num_runs = 1_000_000
+    naive_square_times = f'{time_instantiation(num_runs, ControlSquare, 1)/num_runs:.20f}'
+    getter_square_times = f'{time_instantiation(num_runs, GetterSquare, 1)/num_runs:.20f}'
+    properties_square_times = f'{time_instantiation(num_runs, PropertiesSquare, 1)/num_runs:.20f}'
 
-    no_calc_square_times = time_instantiation(1_000_000, NoCalcSquare, 1)
-    print(f'Avg NoCalc square times in seconds were {no_calc_square_times:.10f}')
+    naive_rectangle_times = f'{time_instantiation(num_runs, ControlRectangle, 2)/num_runs:.20f}'
+    getter_rectangle_times = f'{time_instantiation(num_runs, GetterRectangle, 2)/num_runs:.20f}'
+    properties_rectangle_times = f'{time_instantiation(num_runs, PropertiesRectangle, 2)/num_runs:.20f}'
 
-    naive_rectangle_times = time_instantiation(1_000_000, NaiveRectangle, 2)
-    print(f'Avg Naive rectangle times in seconds were {naive_rectangle_times:.10f}')
+    naive_triangle_times = f'{time_instantiation(num_runs, ControlTriangle, 2)/num_runs:.20f}'
+    getter_triangle_times = f'{time_instantiation(num_runs, GetterTriangle, 2)/num_runs:.20f}'
+    properties_triangle_times = f'{time_instantiation(num_runs, PropertiesTriangle, 2)/num_runs:.20f}'
 
-    no_calc_rectangle_times = time_instantiation(1_000_000, NoCalcRectangle, 2)
-    print(f'Avg NoCalc rectangle times in seconds were {no_calc_rectangle_times:.10f}')
-
-    naive_triangle_times = time_instantiation(1_000_000, NaiveTriangle, 2)
-    print(f'Avg Naive triangle times in seconds were {naive_triangle_times:.10f}')
-
-    no_calc_triangle_times = time_instantiation(1_000_000, NoCalcTriangle, 2)
-    print(f'Avg NoCalc triangle times in seconds were {no_calc_triangle_times:.10f}')
-
-    naive_circle_times = time_instantiation(1_000_000, NaiveCircle, 1)
-    print(f'Avg Naive circle times in seconds were {naive_circle_times:.10f}')
-
-    no_calc_circle_times = time_instantiation(1_000_000, NoCalcCircle, 1)
-    print(f'Avg NoCalc circle times in seconds were {no_calc_circle_times:.10f}')
+    naive_circle_times = f'{time_instantiation(num_runs, ControlCircle, 1)/num_runs:.20f}'
+    getter_circle_times = f'{time_instantiation(num_runs, GetterCircle, 1)/num_runs:.20f}'
+    properties_circle_times = f'{time_instantiation(num_runs, PropertiesCircle, 1)/num_runs:.20f}'
+    with open('instantiation_results.txt', 'w', encoding='utf-8') as results:
+        results.write(HEADER)
+        results.write(DIVIDER)
+        results.write(
+            f'|{"Control Square":{" "}{">"}{COLUMN_WIDTH}}'
+            f'|{naive_square_times:{" "}{">"}{COLUMN_WIDTH}}|\n'
+        )
+        results.write(
+            f'|{"Control Rectangle":{" "}{">"}{COLUMN_WIDTH}}'
+            f'|{naive_rectangle_times:{" "}{">"}{COLUMN_WIDTH}}|\n'
+        )
+        results.write(
+            f'|{"Control Triangle":{" "}{">"}{COLUMN_WIDTH}}'
+            f'|{naive_triangle_times:{" "}{">"}{COLUMN_WIDTH}}|\n'
+        )
+        results.write(
+            f'|{"Control Circle":{" "}{">"}{COLUMN_WIDTH}}'
+            f'|{naive_circle_times:{" "}{">"}{COLUMN_WIDTH}}|\n'
+        )
+        results.write(DIVIDER)
+        results.write(
+            f'|{"Getter Square":{" "}{">"}{COLUMN_WIDTH}}'
+            f'|{getter_square_times:{" "}{">"}{COLUMN_WIDTH}}|\n'
+        )
+        results.write(
+            f'|{"Getter Rectangle":{" "}{">"}{COLUMN_WIDTH}}'
+            f'|{getter_rectangle_times:{" "}{">"}{COLUMN_WIDTH}}|\n'
+        )
+        results.write(
+            f'|{"Getter Triangle":{" "}{">"}{COLUMN_WIDTH}}'
+            f'|{getter_triangle_times:{" "}{">"}{COLUMN_WIDTH}}|\n'
+        )
+        results.write(
+            f'|{"Getter Circle":{" "}{">"}{COLUMN_WIDTH}}'
+            f'|{getter_circle_times:{" "}{">"}{COLUMN_WIDTH}}|\n'
+        )
+        results.write(DIVIDER)
+        results.write(
+            f'|{"Properties Square":{" "}{">"}{COLUMN_WIDTH}}'
+            f'|{properties_square_times:{" "}{">"}{COLUMN_WIDTH}}|\n'
+        )
+        results.write(
+            f'|{"Properties Rectangle":{" "}{">"}{COLUMN_WIDTH}}'
+            f'|{properties_rectangle_times:{" "}{">"}{COLUMN_WIDTH}}|\n'
+        )
+        results.write(
+            f'|{"Properties Triangle":{" "}{">"}{COLUMN_WIDTH}}'
+            f'|{properties_triangle_times:{" "}{">"}{COLUMN_WIDTH}}|\n'
+        )
+        results.write(
+            f'|{"Properties Circle":{" "}{">"}{COLUMN_WIDTH}}'
+            f'|{properties_circle_times:{" "}{">"}{COLUMN_WIDTH}}|\n'
+        )

@@ -1,0 +1,122 @@
+[
+    {
+        "shape": "Control Square",
+        "avg_time": 3.59322484160075e-05
+    },
+    {
+        "shape": "Control Rectangle",
+        "avg_time": 3.582313441694714e-05
+    },
+    {
+        "shape": "Control Triangle",
+        "avg_time": 4.522920083405916e-05
+    },
+    {
+        "shape": "Control Circle",
+        "avg_time": 6.176301849994342e-05
+    },
+    {
+        "shape": "Control Assorted",
+        "avg_time": 5.991343145805877e-05
+    },
+    {
+        "shape": "Procedural Square",
+        "avg_time": 8.109890204190743e-05
+    },
+    {
+        "shape": "Procedural Rectangle",
+        "avg_time": 0.00017851955845800695
+    },
+    {
+        "shape": "Procedural Triangle",
+        "avg_time": 0.00023916084245790263
+    },
+    {
+        "shape": "Procedural Circle",
+        "avg_time": 0.000306946605083067
+    },
+    {
+        "shape": "Procedural Assorted",
+        "avg_time": 0.0002098894421660807
+    },
+    {
+        "shape": "Procedural Match Square",
+        "avg_time": 8.215443341701757e-05
+    },
+    {
+        "shape": "Procedural Match Rectangle",
+        "avg_time": 0.00028178936266701204
+    },
+    {
+        "shape": "Procedural Match Triangle",
+        "avg_time": 0.00013866890987497755
+    },
+    {
+        "shape": "Procedural Match Circle",
+        "avg_time": 0.00020398860525002238
+    },
+    {
+        "shape": "Procedural Match Assorted",
+        "avg_time": 0.0001798730036249617
+    },
+    {
+        "shape": "No Division Square",
+        "avg_time": 3.577331445796881e-05
+    },
+    {
+        "shape": "No Division Rectangle",
+        "avg_time": 3.583863058290444e-05
+    },
+    {
+        "shape": "No Division Triangle",
+        "avg_time": 3.9806785041000696e-05
+    },
+    {
+        "shape": "No Division Circle",
+        "avg_time": 5.41211977909552e-05
+    },
+    {
+        "shape": "No Division Assorted",
+        "avg_time": 5.7184506832971236e-05
+    },
+    {
+        "shape": "Precomputed Constants Square",
+        "avg_time": 3.56954373329645e-05
+    },
+    {
+        "shape": "Precomputed Constants Rectangle",
+        "avg_time": 3.584940687508788e-05
+    },
+    {
+        "shape": "Precomputed Constants Triangle",
+        "avg_time": 3.9873446916928516e-05
+    },
+    {
+        "shape": "Precomputed Constants Circle",
+        "avg_time": 4.0520412791986016e-05
+    },
+    {
+        "shape": "Precomputed Constants Assorted",
+        "avg_time": 5.3427141083986496e-05
+    },
+    {
+        "shape": "Precomputed Class Attr Square",
+        "avg_time": 3.564877504098695e-05
+    },
+    {
+        "shape": "Precomputed Class Attr Rectangle",
+        "avg_time": 3.589320875005797e-05
+    },
+    {
+        "shape": "Precomputed Class Attr Triangle",
+        "avg_time": 4.005308933299966e-05
+    },
+    {
+        "shape": "Precomputed Class Attr Circle",
+        "avg_time": 4.782821770897135e-05
+    },
+    {
+        "shape": "Precomputed Class Attr Assorted",
+        "avg_time": 5.619226412498392e-05
+    }
+]

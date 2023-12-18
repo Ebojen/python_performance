@@ -1,0 +1,50 @@
+[
+    {
+        "shape": "Control Square",
+        "avg_time": 3.280487500596791e-13
+    },
+    {
+        "shape": "Control Rectangle",
+        "avg_time": 4.2874108301475643e-13
+    },
+    {
+        "shape": "Control Triangle",
+        "avg_time": 4.296325829345733e-13
+    },
+    {
+        "shape": "Control Circle",
+        "avg_time": 3.2256045902613547e-13
+    },
+    {
+        "shape": "Getter Square",
+        "avg_time": 3.3135595801286396e-13
+    },
+    {
+        "shape": "Getter Rectangle",
+        "avg_time": 4.4560733309481293e-13
+    },
+    {
+        "shape": "Getter Triangle",
+        "avg_time": 4.4604670791886745e-13
+    },
+    {
+        "shape": "Getter Circle",
+        "avg_time": 3.3677270798943934e-13
+    },
+    {
+        "shape": "Properties Square",
+        "avg_time": 3.2508037495426836e-13
+    },
+    {
+        "shape": "Properties Rectangle",
+        "avg_time": 4.406510830158368e-13
+    },
+    {
+        "shape": "Properties Triangle",
+        "avg_time": 4.395200420403853e-13
+    },
+    {
+        "shape": "Properties Circle",
+        "avg_time": 3.3654150005895647e-13
+    }
+]

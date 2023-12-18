@@ -1,0 +1,142 @@
+[
+    {
+        "shape": "Control Square",
+        "avg_time": 3.5689745249925184e-05
+    },
+    {
+        "shape": "Control Rectangle",
+        "avg_time": 3.596156187495217e-05
+    },
+    {
+        "shape": "Control Triangle",
+        "avg_time": 4.5340071582933885e-05
+    },
+    {
+        "shape": "Control Circle",
+        "avg_time": 6.161453187500592e-05
+    },
+    {
+        "shape": "Control Assorted",
+        "avg_time": 6.116136004205328e-05
+    },
+    {
+        "shape": "Precomputed Constants Square",
+        "avg_time": 3.5780720375012605e-05
+    },
+    {
+        "shape": "Precomputed Constants Rectangle",
+        "avg_time": 3.640732812497299e-05
+    },
+    {
+        "shape": "Precomputed Constants Triangle",
+        "avg_time": 4.033025574998464e-05
+    },
+    {
+        "shape": "Precomputed Constants Circle",
+        "avg_time": 4.1332002667011695e-05
+    },
+    {
+        "shape": "Precomputed Constants Assorted",
+        "avg_time": 5.3720193917048164e-05
+    },
+    {
+        "shape": "With Getters Square",
+        "avg_time": 2.9148167750099675e-05
+    },
+    {
+        "shape": "With Getters Rectangle",
+        "avg_time": 3.080339183297474e-05
+    },
+    {
+        "shape": "With Getters Triangle",
+        "avg_time": 2.947854229202494e-05
+    },
+    {
+        "shape": "With Getters Circle",
+        "avg_time": 2.9115831832983532e-05
+    },
+    {
+        "shape": "With Getters Assorted",
+        "avg_time": 3.949205279198941e-05
+    },
+    {
+        "shape": "With Properties Square",
+        "avg_time": 3.654232708294876e-05
+    },
+    {
+        "shape": "With Properties Rectangle",
+        "avg_time": 3.6509319707984105e-05
+    },
+    {
+        "shape": "With Properties Triangle",
+        "avg_time": 3.652194608305581e-05
+    },
+    {
+        "shape": "With Properties Circle",
+        "avg_time": 3.626552266709041e-05
+    },
+    {
+        "shape": "With Properties Assorted",
+        "avg_time": 3.772033254196867e-05
+    },
+    {
+        "shape": "With Slots Square",
+        "avg_time": 2.8671365041984244e-05
+    },
+    {
+        "shape": "With Slots Rectangle",
+        "avg_time": 2.886149129096884e-05
+    },
+    {
+        "shape": "With Slots Triangle",
+        "avg_time": 2.8740666165947915e-05
+    },
+    {
+        "shape": "With Slots Circle",
+        "avg_time": 2.8808944624965078e-05
+    },
+    {
+        "shape": "With Slots Assorted",
+        "avg_time": 3.957888712501153e-05
+    },
+    {
+        "shape": "With Attributes Square",
+        "avg_time": 1.2256154083064757e-05
+    },
+    {
+        "shape": "With Attributes Rectangle",
+        "avg_time": 1.2869455624953844e-05
+    },
+    {
+        "shape": "With Attributes Triangle",
+        "avg_time": 1.2911401915946044e-05
+    },
+    {
+        "shape": "With Attributes Circle",
+        "avg_time": 1.2160199375008233e-05
+    },
+    {
+        "shape": "With Attributes Assorted",
+        "avg_time": 2.099365720897913e-05
+    },
+    {
+        "shape": "Procedural Square",
+        "avg_time": 7.204456662503071e-05
+    },
+    {
+        "shape": "Procedural Rectangle",
+        "avg_time": 7.223056900000665e-05
+    },
+    {
+        "shape": "Procedural Triangle",
+        "avg_time": 6.561279741697945e-05
+    },
+    {
+        "shape": "Procedural Circle",
+        "avg_time": 6.560965633299201e-05
+    },
+    {
+        "shape": "Procedural Assorted",
+        "avg_time": 7.585600141703617e-05
+    }
+]

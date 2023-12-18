@@ -2,10 +2,7 @@ from typing import Protocol
 
 from control.runner import calculate_total_area_control
 from with_getters.shapes import GETTER_CONSTRUCTORS, PROPERTIES_CONSTRUCTORS
-from utilities import (
-    generate_specs,
-    run_specs
-)
+from utilities import TestRunner
 
 
 NUM_SHAPES = 1_000
@@ -25,20 +22,14 @@ def calculate_total_area_with_properties(squares: list[PropertiesShape]) -> floa
         accumulator += square.area
     return accumulator
 
+run_with_properties = TestRunner(
+    'with properties',
+    PROPERTIES_CONSTRUCTORS,
+    calculate_total_area_with_properties
+)
 
-def run_with_properties():
-    specs = generate_specs('with properties', PROPERTIES_CONSTRUCTORS, NUM_SHAPES)
-    return run_specs(
-        NUM_RUNS,
-        specs,
-        calculate_total_area_with_properties
-    )
-
-
-def run_with_getters():
-    specs = generate_specs('with getters', GETTER_CONSTRUCTORS, NUM_SHAPES)
-    return run_specs(
-        NUM_RUNS,
-        specs,
-        calculate_total_area_control
-    )
+run_with_getters = TestRunner(
+    'with getters',
+    GETTER_CONSTRUCTORS,
+    calculate_total_area_control
+)

@@ -1,142 +1,142 @@
 [
     {
         "shape": "Control Square",
-        "avg_time": 3.5689745249925184e-05
+        "avg_time": 3.5952495958074e-05
     },
     {
         "shape": "Control Rectangle",
-        "avg_time": 3.596156187495217e-05
+        "avg_time": 3.628743141703308e-05
     },
     {
         "shape": "Control Triangle",
-        "avg_time": 4.5340071582933885e-05
+        "avg_time": 4.602747416705824e-05
     },
     {
         "shape": "Control Circle",
-        "avg_time": 6.161453187500592e-05
+        "avg_time": 6.151059116702527e-05
     },
     {
         "shape": "Control Assorted",
-        "avg_time": 6.116136004205328e-05
+        "avg_time": 5.9787255249917504e-05
     },
     {
         "shape": "Precomputed Constants Square",
-        "avg_time": 3.5780720375012605e-05
+        "avg_time": 3.589053800003603e-05
     },
     {
         "shape": "Precomputed Constants Rectangle",
-        "avg_time": 3.640732812497299e-05
+        "avg_time": 3.630159212497529e-05
     },
     {
         "shape": "Precomputed Constants Triangle",
-        "avg_time": 4.033025574998464e-05
+        "avg_time": 4.048979554104153e-05
     },
     {
         "shape": "Precomputed Constants Circle",
-        "avg_time": 4.1332002667011695e-05
+        "avg_time": 4.073691966710612e-05
     },
     {
         "shape": "Precomputed Constants Assorted",
-        "avg_time": 5.3720193917048164e-05
+        "avg_time": 5.379358133301139e-05
     },
     {
         "shape": "With Getters Square",
-        "avg_time": 2.9148167750099675e-05
+        "avg_time": 2.93450044170022e-05
     },
     {
         "shape": "With Getters Rectangle",
-        "avg_time": 3.080339183297474e-05
+        "avg_time": 2.9434505834011362e-05
     },
     {
         "shape": "With Getters Triangle",
-        "avg_time": 2.947854229202494e-05
+        "avg_time": 2.9341790875070727e-05
     },
     {
         "shape": "With Getters Circle",
-        "avg_time": 2.9115831832983532e-05
+        "avg_time": 2.9260225417092443e-05
     },
     {
         "shape": "With Getters Assorted",
-        "avg_time": 3.949205279198941e-05
+        "avg_time": 3.918219558300916e-05
     },
     {
         "shape": "With Properties Square",
-        "avg_time": 3.654232708294876e-05
+        "avg_time": 3.6073749542003495e-05
     },
     {
         "shape": "With Properties Rectangle",
-        "avg_time": 3.6509319707984105e-05
+        "avg_time": 3.6259606915991753e-05
     },
     {
         "shape": "With Properties Triangle",
-        "avg_time": 3.652194608305581e-05
+        "avg_time": 3.609833404200617e-05
     },
     {
         "shape": "With Properties Circle",
-        "avg_time": 3.626552266709041e-05
+        "avg_time": 3.604380412504543e-05
     },
     {
         "shape": "With Properties Assorted",
-        "avg_time": 3.772033254196867e-05
+        "avg_time": 3.814256137493067e-05
     },
     {
         "shape": "With Slots Square",
-        "avg_time": 2.8671365041984244e-05
+        "avg_time": 2.8902166416984982e-05
     },
     {
         "shape": "With Slots Rectangle",
-        "avg_time": 2.886149129096884e-05
+        "avg_time": 2.9129955167067238e-05
     },
     {
         "shape": "With Slots Triangle",
-        "avg_time": 2.8740666165947915e-05
+        "avg_time": 2.9105535915936343e-05
     },
     {
         "shape": "With Slots Circle",
-        "avg_time": 2.8808944624965078e-05
+        "avg_time": 2.9090853416011668e-05
     },
     {
         "shape": "With Slots Assorted",
-        "avg_time": 3.957888712501153e-05
+        "avg_time": 3.934191220800858e-05
     },
     {
         "shape": "With Attributes Square",
-        "avg_time": 1.2256154083064757e-05
+        "avg_time": 1.2115899124997668e-05
     },
     {
         "shape": "With Attributes Rectangle",
-        "avg_time": 1.2869455624953844e-05
+        "avg_time": 1.2902694958029315e-05
     },
     {
         "shape": "With Attributes Triangle",
-        "avg_time": 1.2911401915946044e-05
+        "avg_time": 1.2879834166960792e-05
     },
     {
         "shape": "With Attributes Circle",
-        "avg_time": 1.2160199375008233e-05
+        "avg_time": 1.222251533297822e-05
     },
     {
         "shape": "With Attributes Assorted",
-        "avg_time": 2.099365720897913e-05
+        "avg_time": 2.098990570800379e-05
     },
     {
-        "shape": "Procedural Square",
-        "avg_time": 7.204456662503071e-05
+        "shape": "Corey'S Way Square",
+        "avg_time": 7.101588550000451e-05
     },
     {
-        "shape": "Procedural Rectangle",
-        "avg_time": 7.223056900000665e-05
+        "shape": "Corey'S Way Rectangle",
+        "avg_time": 7.104026391601656e-05
     },
     {
-        "shape": "Procedural Triangle",
-        "avg_time": 6.561279741697945e-05
+        "shape": "Corey'S Way Triangle",
+        "avg_time": 6.529868320899549e-05
     },
     {
-        "shape": "Procedural Circle",
-        "avg_time": 6.560965633299201e-05
+        "shape": "Corey'S Way Circle",
+        "avg_time": 6.765349133394193e-05
     },
     {
-        "shape": "Procedural Assorted",
-        "avg_time": 7.585600141703617e-05
+        "shape": "Corey'S Way Assorted",
+        "avg_time": 7.549214216694236e-05
     }
 ]

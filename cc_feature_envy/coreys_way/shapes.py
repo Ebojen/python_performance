@@ -22,6 +22,14 @@ class ShapeUnion:
         self.height = height
 
 
+class PreCompShapeUnion:
+    def __init__(self, shape_type: ShapeType, width: float, height: float):
+        self.type = shape_type
+        self.width = width
+        self.height = height
+        self.rectangular_area = width * height
+
+
 PROCEDURAL_CONSTRUCTORS: ConstructorSet = {
     'square': partial(ShapeUnion, ShapeType.SQUARE),
     'rectangle': partial(ShapeUnion, ShapeType.RECTANGLE),

@@ -6,7 +6,7 @@ from precompute_constants.runner import run_precomputed_constants
 from with_getters.runner import run_with_getters, run_with_properties
 from with_slots.runner import run_with_slots
 from with_attrs.runner import run_with_attrs
-from coreys_way.runner import run_coreys_way
+from coreys_way.runner import run_coreys_way, run_coreys_way_precomp
 
 def main(results_file: str):
     num_shapes = 1_000
@@ -19,6 +19,7 @@ def main(results_file: str):
         run_with_slots,
         run_with_attrs,
         run_coreys_way,
+        run_coreys_way_precomp,
     ]
     results = []
     for test in tests:

@@ -1,11 +1,15 @@
-from enum import Enum
+from enum import auto, Enum
 from functools import partial
 
 from utilities import ConstructorSet
 from precompute_constants.shapes import CIRCLE_CONSTANT
 
+class ShapeType(Enum):
+    SQUARE = auto()
+    RECTANGLE = auto()
+    TRIANGLE = auto()
+    CIRCLE = auto()
 
-ShapeType = Enum('ShapeType', ['SQUARE', 'RECTANGLE', 'TRIANGLE', 'CIRCLE'])
 
 SHAPE_CONSTANTS_TBL = {
     ShapeType.SQUARE: 1,
@@ -35,4 +39,11 @@ PROCEDURAL_CONSTRUCTORS: ConstructorSet = {
     'rectangle': partial(ShapeUnion, ShapeType.RECTANGLE),
     'triangle': partial(ShapeUnion, ShapeType.TRIANGLE),
     'circle': partial(ShapeUnion, ShapeType.CIRCLE),
+}
+
+PROCEDURAL_PRECOMP_CONSTRUCTORS: ConstructorSet = {
+    'square': partial(PreCompShapeUnion, ShapeType.SQUARE),
+    'rectangle': partial(PreCompShapeUnion, ShapeType.RECTANGLE),
+    'triangle': partial(PreCompShapeUnion, ShapeType.TRIANGLE),
+    'circle': partial(PreCompShapeUnion, ShapeType.CIRCLE),
 }

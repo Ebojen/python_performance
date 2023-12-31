@@ -12,12 +12,3 @@ def calculate_total_area_control(shapes: list[Shape]) -> float:
     return accumulator
 
 run_control = TestRunner('control', NAIVE_CONSTRUCTORS, calculate_total_area_control)
-
-
-# def run_control():
-#     specs = generate_specs('control', NAIVE_CONSTRUCTORS, NUM_SHAPES)
-#     return run_specs(
-#         NUM_RUNS,
-#         specs,
-#         calculate_total_area_control
-#     )

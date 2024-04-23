@@ -17,14 +17,27 @@ def flatten_data(func, data):
 def main():
     data = [generate_customer() for _ in range(NUM_DATA_ITEMS)]
     avg_control_time = (
-        timeit(lambda: flatten_data(control_flatten, data), number=ITERATIONS)
+        timeit(
+            lambda: flatten_data(control_flatten, data),
+            setup="gc.enable()",
+            number=ITERATIONS,
+        )
         / ITERATIONS
     )
     avg_dry_time = (
-        timeit(lambda: flatten_data(dry_flatten, data), number=ITERATIONS) / ITERATIONS
+        timeit(
+            lambda: flatten_data(dry_flatten, data),
+            setup="gc.enable()",
+            number=ITERATIONS,
+        )
+        / ITERATIONS
     )
     avg_one_time = (
-        timeit(lambda: flatten_data(one_thing_flatten, data), number=ITERATIONS)
+        timeit(
+            lambda: flatten_data(one_thing_flatten, data),
+            setup="gc.enable()",
+            number=ITERATIONS,
+        )
         / ITERATIONS
     )
 

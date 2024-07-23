@@ -47,7 +47,7 @@ for idx, row in enumerate(df.values.tolist()):
         pretty_data.append(SEPARATING_LINE)
 
 with open(
-    Path(__file__).parent / Path("final_result.txt"), "w", encoding="utf-8"
+    Path(__file__).parent / Path("final_result.txt"), "a", encoding="utf-8"
 ) as file:
     file.write(
         tabulate(

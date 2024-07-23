@@ -1,5 +1,7 @@
 import json
 import sqlite3
+from random import randint
+NUM_CUSTOMERS = 59
 
 
 def dict_factory(cursor, row):
@@ -26,12 +28,7 @@ def get_data_from_db(query, params):
 def handle_customers(event):
     query = """
         SELECT
-            c.CustomerId
-            , c.Address
-            , c.City
-            , c.State
-            , c.Country
-            , c.PostalCode
+            c.*
             , t.Name
         FROM customers c
         JOIN invoices i
@@ -42,19 +39,18 @@ def handle_customers(event):
             ON ii.TrackId = t.TrackId
         WHERE c.CustomerId = ?
     """
-    customer_id = event["pathParamters"]["customer_id"]
-
+    customer_id = event["pathParameters"]["customer_id"]
     data = get_data_from_db(query, [customer_id])
 
     response_body = {
-        "CustomerId": data[0]["CustomerId"],
-        "Name": f"{data[0]['LastName']}, {data[0]['FirstName']}",
-        "Address": data[0]["Address"],
-        "City": data[0]["City"],
-        "State": data[0]["State"],
-        "Country": data[0]["Country"],
-        "PostalCode": data[0]["PostalCode"],
-        "OwnedTracks": [row["Name"] for row in data],
+        "CustomerId": data[0][0],
+        "Name": f"{data[0][2]}, {data[0][1]}",
+        "Address": data[0][4],
+        "City": data[0][5],
+        "State": data[0][6],
+        "Country": data[0][7],
+        "PostalCode": data[0][8],
+        "OwnedTracks": [row[13] for row in data],
     }
     return format_response(200, response_body)
 
@@ -77,10 +73,10 @@ def handle_albums(event):
     data = get_data_from_db(query, [album_id])
     first_row = data[0]
     response_body = {
-        "AlbumId": first_row["AlbumId"],
-        "Title": first_row["Title"],
-        "Artist": first_row["ArtistName"],
-        "Tracks": [row["TrackName"] for row in data],
+        "AlbumId": first_row[0],
+        "Title": first_row[1],
+        "Artist": first_row[2],
+        "Tracks": [row[3] for row in data],
     }
     return format_response(200, response_body)
 
@@ -96,3 +92,12 @@ def lambda_handler(event, _context):
 
     if "albums" in resource and event["pathParameters"]:
         return handle_albums(event)
+
+
+if __name__ == '__main__':
+    e = {
+        "resource": "/customers",
+        "httpMethod": "GET",
+        "pathParameters": {"customer_id": 52, "album_id": 23}  # randint(1, NUM_CUSTOMERS)},
+    }
+    print(lambda_handler(e, {}))

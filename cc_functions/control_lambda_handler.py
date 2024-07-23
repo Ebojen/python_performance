@@ -20,13 +20,8 @@ def lambda_handler(event, _context):
     if 'customers' in resource and event['pathParameters']:
         query = """
             SELECT
-                c.CustomerId
-				, c.Address
-				, c.City
-				, c.State
-				, c.Country
-				, c.PostalCode
-				, t.Name
+            c.*
+            , t.Name
             FROM customers c
             JOIN invoices i
                 ON  c.CustomerId = i.CustomerId
@@ -44,14 +39,14 @@ def lambda_handler(event, _context):
             data = list(cur.execute(query, [customer_id]).fetchall())
 
             response_body = {
-                "CustomerId": data[0]["CustomerId"],
-                "Name": f"{data[0]['LastName']}, {data[0]['FirstName']}",
-                "Address": data[0]["Address"],
-                "City": data[0]["City"],
-                "State": data[0]["State"],
-                "Country": data[0]["Country"],
-                "PostalCode": data[0]["PostalCode"],
-                "OwnedTracks": [row["Name"] for row in data],
+                "CustomerId": data[0][0],
+                "Name": f"{data[0][2]}, {data[0][1]}",
+                "Address": data[0][4],
+                "City": data[0][5],
+                "State": data[0][6],
+                "Country": data[0][7],
+                "PostalCode": data[0][8],
+                "OwnedTracks": [row[13] for row in data],
             }
             cur.close()
             return {
@@ -82,13 +77,22 @@ def lambda_handler(event, _context):
             cur.close()
             first_row = data[0]
             response_body = {
-                "AlbumId": first_row["AlbumId"],
-                "Title": first_row["Title"],
-                "Artist": first_row["ArtistName"],
-                "Tracks": [row['TrackName'] for row in data],
+                "AlbumId": first_row[0],
+                "Title": first_row[1],
+                "Artist": first_row[2],
+                "Tracks": [row[3] for row in data],
             }
             return {
                 "statusCode": 200,
                 "headers": {"Content-Type": "application/json"},
                 "body": json.dumps(response_body, ensure_ascii=False),
             }
+
+
+if __name__ == '__main__':
+    e = {
+        "resource": "/customers",
+        "httpMethod": "GET",
+        "pathParameters": {"customer_id": 52, "album_id": 23}  # randint(1, NUM_CUSTOMERS)},
+    }
+    lambda_handler(e, {})

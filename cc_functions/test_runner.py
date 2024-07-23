@@ -1,4 +1,5 @@
 import json
+import uuid
 from random import random, randint
 from timeit import timeit
 
@@ -38,7 +39,8 @@ def run_test(test_config):
     return {
         "test_name": test_config["test_name"],
         "handler": test_config["handler_name"],
-        "avg_time": results / NUM_TRIALS / NUM_EVENTS
+        "avg_time": results / NUM_TRIALS / NUM_EVENTS,
+        "test_id": test_config["test_id"],
     }
 
 
@@ -129,6 +131,11 @@ def main():
             ],
         },
     ]
+    test_id = str(uuid.uuid4())
+    configs_with_test_id = []
+    for config in configurations:
+        config['test_id'] = test_id
+        configs_with_test_id.append(config)
 
     results = [run_test(config) for config in configurations]
     cleaned_results = [result for result in results if result["test_name"] != "Warm Up"]

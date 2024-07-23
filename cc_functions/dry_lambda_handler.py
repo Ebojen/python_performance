@@ -30,11 +30,39 @@ def lambda_handler(event, _context):
 
     resource = event["resource"]
     if "customers" in resource and event["pathParameters"]:
-        query = "SELECT * FROM customers WHERE CustomerId = ?"
+        query = """
+            SELECT
+                c.CustomerId
+				, c.Address
+				, c.City
+				, c.State
+				, c.Country
+				, c.PostalCode
+				, t.Name
+            FROM customers c
+            JOIN invoices i
+                ON  c.CustomerId = i.CustomerId
+            JOIN invoice_items ii
+                on i.InvoiceId = ii.InvoiceId
+			JOIN tracks t
+				ON ii.TrackId = t.TrackId
+            WHERE c.CustomerId = ?
+        """
         customer_id = event["pathParameters"]["customer_id"]
 
         data = get_data_from_db(query, [customer_id])
-        return format_response(200, data)
+
+        response_body = {
+            "CustomerId": data[0]["CustomerId"],
+            "Name": f"{data[0]['LastName']}, {data[0]['FirstName']}",
+            "Address": data[0]["Address"],
+            "City": data[0]["City"],
+            "State": data[0]["State"],
+            "Country": data[0]["Country"],
+            "PostalCode": data[0]["PostalCode"],
+            "OwnedTracks": [row["Name"] for row in data],
+        }
+        return format_response(200, response_body)
 
     if "albums" in resource and event["pathParameters"]:
         query = """

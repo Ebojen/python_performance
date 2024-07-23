@@ -1,9 +1,11 @@
 import json
 import sqlite3
 
+
 def dict_factory(cursor, row):
     fields = [column[0] for column in cursor.description]
     return {key: value for key, value in zip(fields, row)}
+
 
 def lambda_handler(event, _context):
     # create two endpoints, customers and albums.
@@ -11,25 +13,53 @@ def lambda_handler(event, _context):
         return {
             "statusCode": 400,
             "headers": {"Content-Type": "application/json"},
-            "body": json.dumps(data, ensure_ascii=False),
+            "body": json.dumps("Unsupported Method", ensure_ascii=False),
         }
+
     resource = event['resource']
     if 'customers' in resource and event['pathParameters']:
-        query = "SELECT * FROM customers WHERE CustomerId = ?"
+        query = """
+            SELECT
+                c.CustomerId
+				, c.Address
+				, c.City
+				, c.State
+				, c.Country
+				, c.PostalCode
+				, t.Name
+            FROM customers c
+            JOIN invoices i
+                ON  c.CustomerId = i.CustomerId
+            JOIN invoice_items ii
+                on i.InvoiceId = ii.InvoiceId
+			JOIN tracks t
+				ON ii.TrackId = t.TrackId
+            WHERE c.CustomerId = ?
+        """
         customer_id = event["pathParameters"]["customer_id"]
 
         with sqlite3.connect('./cc_functions/chinook.db') as con:
             con.row_factory = dict_factory
             cur = con.cursor()
             data = list(cur.execute(query, [customer_id]).fetchall())
+
+            response_body = {
+                "CustomerId": data[0]["CustomerId"],
+                "Name": f"{data[0]['LastName']}, {data[0]['FirstName']}",
+                "Address": data[0]["Address"],
+                "City": data[0]["City"],
+                "State": data[0]["State"],
+                "Country": data[0]["Country"],
+                "PostalCode": data[0]["PostalCode"],
+                "OwnedTracks": [row["Name"] for row in data],
+            }
             cur.close()
             return {
                 "statusCode": 200,
-                "headers": {
-                    "Content-Type": "application/json"
-                },
-                "body": json.dumps(data, ensure_ascii=False)
+                "headers": {"Content-Type": "application/json"},
+                "body": json.dumps(response_body, ensure_ascii=False),
             }
+
     if 'albums' in resource and event['pathParameters']:
         query = """
             SELECT

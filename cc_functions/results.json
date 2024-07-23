@@ -1,0 +1,47 @@
+[
+    {
+        "test_name": "Only Customers",
+        "handler": "Control",
+        "avg_time": 3.342794589998448e-14
+    },
+    {
+        "test_name": "Only Albums",
+        "handler": "Control",
+        "avg_time": 3.337832500001241e-14
+    },
+    {
+        "test_name": "Customers and Albums",
+        "handler": "Control",
+        "avg_time": 3.34873666999556e-14
+    },
+    {
+        "test_name": "Only Customers",
+        "handler": "DRY",
+        "avg_time": 3.333009159996436e-14
+    },
+    {
+        "test_name": "Only Albums",
+        "handler": "DRY",
+        "avg_time": 3.340246249999837e-14
+    },
+    {
+        "test_name": "Customers and Albums",
+        "handler": "DRY",
+        "avg_time": 3.337358329999915e-14
+    },
+    {
+        "test_name": "Only Customers",
+        "handler": "Clean Code",
+        "avg_time": 3.337839169998915e-14
+    },
+    {
+        "test_name": "Only Albums",
+        "handler": "Clean Code",
+        "avg_time": 3.338610000000699e-14
+    },
+    {
+        "test_name": "Customers and Albums",
+        "handler": "Clean Code",
+        "avg_time": 3.338289169996642e-14
+    }
+]
